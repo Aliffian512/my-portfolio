@@ -3,212 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portofolio Rafi</title>
+<title>Portfolio Rafi</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#0f172a;
-color:white;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+body{background:#0f172a;color:white;}
 
 /* NAVBAR */
 nav{
-position:fixed;
-width:100%;
-background:#0f172a;
-padding:15px 10%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:1000;
+position:fixed;width:100%;background:#0f172a;
+padding:15px 10%;display:flex;justify-content:space-between;align-items:center;z-index:1000;
 }
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#38bdf8;
-}
+nav a{color:white;text-decoration:none;margin-left:20px;transition:0.3s;}
+nav a:hover{color:#38bdf8;}
 
 /* HEADER */
 header{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 10%;
+height:100vh;display:flex;flex-direction:column;
+justify-content:center;align-items:center;text-align:center;padding:0 10%;
 }
-
-header h1{
-font-size:50px;
-}
-
-header span{
-color:#38bdf8;
-}
-
-header p{
-margin-top:15px;
-color:#94a3b8;
-}
+header h1{font-size:50px;}
+header span{color:#38bdf8;}
+header p{margin-top:15px;color:#94a3b8;}
 
 .btn{
-margin-top:20px;
-padding:12px 25px;
-background:#38bdf8;
-color:black;
-text-decoration:none;
-border-radius:5px;
-font-weight:bold;
-display:inline-block;
-transition:0.3s;
+margin-top:20px;padding:12px 25px;background:#38bdf8;color:black;
+text-decoration:none;border-radius:5px;font-weight:bold;display:inline-block;transition:0.3s;
 }
+.btn:hover{background:#0ea5e9;}
 
-.btn:hover{
-background:#0ea5e9;
-}
-
-/* SECTION */
-section{
-padding:100px 10%;
-}
-
-h2{
-text-align:center;
-margin-bottom:50px;
-font-size:35px;
-}
+section{padding:100px 10%;}
+h2{text-align:center;margin-bottom:50px;font-size:35px;}
 
 /* SKILL */
 .skills{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:30px;text-align:center;
 }
-
 .skill-card{
-background:#1e293b;
-padding:20px;
-text-align:center;
-border-radius:10px;
-transition:0.3s;
+background:#1e293b;padding:25px;border-radius:15px;transition:0.3s;
+}
+.skill-card:hover{transform:translateY(-8px);}
+.skill-card img{
+width:50px;height:50px;margin-bottom:10px;
 }
 
-.skill-card:hover{
-transform:translateY(-5px);
+/* EXPERIENCE */
+.experience, .education{
+background:#1e293b;padding:30px;border-radius:15px;
+max-width:800px;margin:auto;
 }
 
-/* PROJECT GRID */
+/* PROJECT */
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
 gap:40px;
 }
+.card{background:#1e293b;border-radius:15px;overflow:hidden;}
 
-/* CARD */
-.card{
-background:#1e293b;
-border-radius:15px;
-overflow:hidden;
-}
+/* SLIDER */
+.slider{position:relative;overflow:hidden;width:100%;height:350px;}
+.slides{display:flex;transition:transform 0.6s ease-in-out;}
+.slide{flex:0 0 100%;width:100%;height:350px;object-fit:cover;}
 
-/* SLIDER CLEAN */
-.slider{
-position:relative;
-overflow:hidden;
-width:100%;
-height:350px;
-}
-
-.slides{
-display:flex;
-transition:transform 0.6s ease-in-out;
-}
-
-.slide{
-flex:0 0 100%;
-width:100%;
-height:350px;
-object-fit:cover;
-}
+/* Android vertical */
+.slider-vertical{height:500px;max-width:300px;margin:0 auto;}
+.slider-vertical .slide{height:500px;}
 
 /* Arrow */
 .prev,.next{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,0.5);
-color:white;
-border:none;
-padding:10px 15px;
-cursor:pointer;
-border-radius:5px;
-font-size:18px;
+position:absolute;top:50%;transform:translateY(-50%);
+background:rgba(0,0,0,0.5);color:white;border:none;
+padding:10px 15px;cursor:pointer;border-radius:5px;
 }
-
-.prev{left:15px;}
-.next{right:15px;}
+.prev{left:15px;} .next{right:15px;}
 
 /* Dots */
-.dots{
-position:absolute;
-bottom:15px;
-width:100%;
-text-align:center;
-}
-
+.dots{position:absolute;bottom:15px;width:100%;text-align:center;}
 .dot{
-height:12px;
-width:12px;
-margin:0 4px;
+height:12px;width:12px;margin:0 4px;
 background:rgba(255,255,255,0.4);
-display:inline-block;
-border-radius:50%;
-cursor:pointer;
-transition:0.3s;
+display:inline-block;border-radius:50%;cursor:pointer;
 }
+.active-dot{background:#38bdf8;}
 
-.active-dot{
-background:#38bdf8;
-}
+.card-content{padding:25px;text-align:center;}
 
-.card-content{
-padding:25px;
-text-align:center;
-}
+footer{text-align:center;padding:20px;background:#1e293b;}
 
-footer{
-text-align:center;
-padding:20px;
-background:#1e293b;
-}
-
-/* RESPONSIVE */
 @media(max-width:768px){
-header h1{
-font-size:35px;
-}
-.slider{
-height:250px;
-}
-.slide{
-height:250px;
-}
+header h1{font-size:35px;}
+.slider{height:250px;}
+.slide{height:250px;}
+.slider-vertical{height:400px;}
+.slider-vertical .slide{height:400px;}
 }
 </style>
 </head>
@@ -242,11 +133,50 @@ Saya mengembangkan aplikasi Android dan website berbasis Laravel dengan sistem b
 <section id="skills">
 <h2>Skill</h2>
 <div class="skills">
-<div class="skill-card">Android (Java)</div>
-<div class="skill-card">Laravel</div>
-<div class="skill-card">MySQL</div>
-<div class="skill-card">REST API</div>
-<div class="skill-card">Git & GitHub</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+<p>Java</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg">
+<p>Laravel</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+<p>HTML</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+<p>CSS</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+<p>MySQL</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+<p>GitHub</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+<p>PHP</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Pengalaman</h2>
+<div class="experience">
+<p><strong>Project Booking Futsal (2025)</strong><br>
+Mengembangkan aplikasi Android dan backend Laravel lengkap dengan sistem pembayaran dan verifikasi admin.</p>
 </div>
 </section>
 
@@ -254,46 +184,46 @@ Saya mengembangkan aplikasi Android dan website berbasis Laravel dengan sistem b
 <h2>Project</h2>
 <div class="projects">
 
-<!-- ANDROID -->
 <div class="card">
-<div class="slider">
+<div class="slider slider-vertical">
 <div class="slides">
 <img src="images/android-1.jpg" class="slide">
-<img src="images/android-2.jpg" class="slide">
-<img src="images/android3.jpg" class="slide">
+<img src="images/android2.jpg" class="slide">
 </div>
 <button class="prev">&#10094;</button>
 <button class="next">&#10095;</button>
 <div class="dots"></div>
 </div>
-
 <div class="card-content">
 <h3>Booking Lapangan Futsal (Android)</h3>
 <p>Aplikasi Android dengan sistem booking dan pembayaran.</p>
-<a href="https://github.com/username/project-android" target="_blank" class="btn">View Code</a>
 </div>
 </div>
 
-<!-- WEBSITE -->
 <div class="card">
 <div class="slider">
 <div class="slides">
 <img src="images/website-1.png" class="slide">
 <img src="images/web2.jpg" class="slide">
-<img src="images/web3.jpg" class="slide">
 </div>
 <button class="prev">&#10094;</button>
 <button class="next">&#10095;</button>
 <div class="dots"></div>
 </div>
-
 <div class="card-content">
 <h3>Website Laravel Booking Futsal</h3>
-<p>Dashboard admin dan backend untuk manajemen booking dan pembayaran.</p>
-<a href="https://github.com/username/project-web" target="_blank" class="btn">View Code</a>
+<p>Dashboard admin dan backend untuk manajemen booking.</p>
 </div>
 </div>
 
+</div>
+</section>
+
+<section>
+<h2>Pendidikan</h2>
+<div class="education">
+<p><strong>S1 Teknik Informatika</strong><br>
+Universitas XXXX (2021 - 2025)</p>
 </div>
 </section>
 
@@ -310,50 +240,33 @@ GitHub: github.com/usernamekamu
 </footer>
 
 <script>
-document.querySelectorAll(".slider").forEach(slider => {
+document.querySelectorAll(".slider").forEach(slider=>{
+const slides=slider.querySelector(".slides");
+const images=slider.querySelectorAll(".slide");
+const prev=slider.querySelector(".prev");
+const next=slider.querySelector(".next");
+const dotsContainer=slider.querySelector(".dots");
+let index=0;
 
-const slides = slider.querySelector(".slides");
-const images = slider.querySelectorAll(".slide");
-const prev = slider.querySelector(".prev");
-const next = slider.querySelector(".next");
-const dotsContainer = slider.querySelector(".dots");
-
-let index = 0;
-
-images.forEach((_, i) => {
-const dot = document.createElement("span");
+images.forEach((_,i)=>{
+const dot=document.createElement("span");
 dot.classList.add("dot");
-if(i === 0) dot.classList.add("active-dot");
-dot.addEventListener("click", () => {
-index = i;
-updateSlider();
-});
+if(i===0) dot.classList.add("active-dot");
+dot.addEventListener("click",()=>{index=i;update();});
 dotsContainer.appendChild(dot);
 });
+const dots=slider.querySelectorAll(".dot");
 
-const dots = slider.querySelectorAll(".dot");
-
-function updateSlider(){
-slides.style.transform = `translateX(-${index * 100}%)`;
-dots.forEach(dot => dot.classList.remove("active-dot"));
+function update(){
+slides.style.transform=`translateX(-${index*100}%)`;
+dots.forEach(d=>d.classList.remove("active-dot"));
 dots[index].classList.add("active-dot");
 }
 
-next.addEventListener("click", () => {
-index = (index + 1) % images.length;
-updateSlider();
-});
+next.addEventListener("click",()=>{index=(index+1)%images.length;update();});
+prev.addEventListener("click",()=>{index=(index-1+images.length)%images.length;update();});
 
-prev.addEventListener("click", () => {
-index = (index - 1 + images.length) % images.length;
-updateSlider();
-});
-
-setInterval(() => {
-index = (index + 1) % images.length;
-updateSlider();
-}, 4000);
-
+setInterval(()=>{index=(index+1)%images.length;update();},4000);
 });
 </script>
 
