@@ -36,208 +36,144 @@ text-decoration:none;border-radius:5px;font-weight:bold;display:inline-block;tra
 section{padding:100px 10%;}
 h2{text-align:center;margin-bottom:50px;font-size:35px;}
 
-/* SKILL */
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:30px;text-align:center;
-}
-.skill-card{
-background:#1e293b;padding:25px;border-radius:15px;transition:0.3s;
-}
-.skill-card:hover{transform:translateY(-8px);}
-.skill-card img{
-width:50px;height:50px;margin-bottom:10px;
-}
-
-/* EXPERIENCE */
-.experience, .education{
-background:#1e293b;padding:30px;border-radius:15px;
-max-width:800px;margin:auto;
-}
-
-/* PROJECT */
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
 gap:40px;
 }
-.card{background:#1e293b;border-radius:15px;overflow:hidden;}
 
-/* SLIDER */
-.slider{position:relative;overflow:hidden;width:100%;height:500px;}
-.slides{display:flex;transition:transform 0.6s ease-in-out;}
-.slide{flex:0 0 100%;width:100%;height:350px;object-fit:cover;}
-
-/* ANDROID SLIDER TINGGI */
-.slider-vertical{
-    height:650px;           /* lebih tinggi */
-    max-width:340px;        /* sedikit lebih lebar biar proporsional */
-    margin:40px auto 0;     /* margin atas 40px */
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,0.15);
-    background:white;
+.card{
+background:#1e293b;
+border-radius:20px;
+padding:30px 20px;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
-.slider-vertical .slide{
-    height:650px;
-    width:100%;
-    object-fit:contain;
-    background:#fff;
+/* ===================== */
+/* ANDROID SLIDER FIXED  */
+/* ===================== */
+
+.slider-android{
+position:relative;
+max-width:280px;              /* lebih ramping */
+width:100%;
+aspect-ratio:9/16;            /* rasio HP */
+margin-top:40px;
+overflow:hidden;
+border-radius:30px;
+background:white;
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
 }
-    
+
+.slider-android .slides{
+display:flex;
+transition:transform 0.6s ease-in-out;
+height:100%;
+}
+
+.slider-android .slide{
+flex:0 0 100%;
+width:100%;
+height:100%;
+object-fit:contain;           /* tidak terpotong */
+background:white;
+}
+
+/* ===================== */
+/* WEBSITE SLIDER FIXED  */
+/* ===================== */
+
+.slider-web{
+position:relative;
+width:100%;
+aspect-ratio:16/9;            /* proporsional desktop */
+overflow:hidden;
+border-radius:20px;
+background:#0f172a;
+box-shadow:0 15px 35px rgba(0,0,0,0.3);
+}
+
+.slider-web .slides{
+display:flex;
+transition:transform 0.6s ease-in-out;
+height:100%;
+}
+
+.slider-web .slide{
+flex:0 0 100%;
+width:100%;
+height:100%;
+object-fit:contain;
+background:#0f172a;
+}
+
 /* Arrow */
 .prev,.next{
 position:absolute;top:50%;transform:translateY(-50%);
 background:rgba(0,0,0,0.5);color:white;border:none;
 padding:10px 15px;cursor:pointer;border-radius:5px;
 }
-.prev{left:15px;} .next{right:15px;}
+.prev{left:10px;} 
+.next{right:10px;}
 
 /* Dots */
-.dots{position:absolute;bottom:15px;width:100%;text-align:center;}
+.dots{
+position:absolute;
+bottom:15px;
+width:100%;
+text-align:center;
+}
 .dot{
-height:12px;width:12px;margin:0 4px;
+height:10px;width:10px;margin:0 4px;
 background:rgba(255,255,255,0.4);
 display:inline-block;border-radius:50%;cursor:pointer;
 }
 .active-dot{background:#38bdf8;}
 
-.card-content{padding:25px;text-align:center;}
+.card-content{
+margin-top:25px;
+text-align:center;
+}
 
 footer{text-align:center;padding:20px;background:#1e293b;}
 
 @media(max-width:768px){
-header h1{font-size:35px;}
-.slider{height:250px;}
-.slide{height:250px;}
-.slider-vertical{height:400px;}
-.slider-vertical .slide{height:400px;}
+.slider-android{max-width:220px;}
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<div><strong>Rafi</strong></div>
-<div>
-<a href="#about">About</a>
-<a href="#skills">Skill</a>
-<a href="#projects">Project</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
-<header>
-<h1>Halo, Saya <span>Rafi</span> 👋</h1>
-<p>Android Developer | Laravel Backend</p>
-<a href="#projects" class="btn">Lihat Project</a>
-<a href="cv.pdf" class="btn">Download CV</a>
-</header>
-
-<section id="about">
-<h2>Tentang Saya</h2>
-<p style="text-align:center;max-width:700px;margin:auto;">
-Saya mengembangkan aplikasi Android dan website berbasis Laravel dengan sistem booking dan pembayaran.
-</p>
-</section>
-
-<section id="skills">
-<h2>Skill</h2>
-<div class="skills">
-
-<div class="skill-card">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
-<p>Java</p>
-</div>
-
-<div class="skill-card">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg">
-<p>Laravel</p>
-</div>
-
-<div class="skill-card">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
-<p>HTML</p>
-</div>
-
-<div class="skill-card">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
-<p>CSS</p>
-</div>
-
-<div class="skill-card">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
-<p>MySQL</p>
-</div>
-
-<div class="skill-card">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
-<p>GitHub</p>
-</div>
-
-<div class="skill-card">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
-<p>PHP</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<h2>Pengalaman</h2>
-<div class="experience">
-<p><strong>Project Booking Futsal (2025)</strong><br>
-Mengembangkan aplikasi Android dan backend Laravel lengkap dengan sistem pembayaran dan verifikasi admin.</p>
-</div>
-</section>
-
 <section id="projects">
 <h2>Project</h2>
+
 <div class="projects">
 
+<!-- ANDROID -->
 <div class="card">
-<div class="slider slider-vertical">
+<div class="slider-android slider">
 <div class="slides">
 <img src="images/android-1.jpg" class="slide">
 <img src="images/android-2.jpg" class="slide">
-<img src="images/IMG-20250813-WA0005.jpg" class="slide">
-<img src="images/IMG-20250813-WA0006.jpg" class="slide">
-<img src="images/IMG-20250813-WA0007.jpg" class="slide">
-<img src="images/IMG-20250813-WA0008.jpg" class="slide">
-<img src="images/IMG-20250813-WA0009.jpg" class="slide">
-<img src="images/IMG-20250813-WA0010.jpg" class="slide">
-<img src="images/IMG-20250813-WA0011.jpg" class="slide">
-<img src="images/IMG-20250813-WA0012.jpg" class="slide">
-<img src="images/IMG-20250813-WA0013.jpg" class="slide">
-<img src="images/IMG-20250813-WA0014.jpg" class="slide">
-<img src="images/IMG-20250813-WA0015.jpg" class="slide">
-<img src="images/IMG-20250813-WA0016.jpg" class="slide">
-<img src="images/IMG-20250813-WA0017.jpg" class="slide">
-<img src="images/IMG-20250813-WA0018.jpg" class="slide">
-<img src="images/IMG-20250813-WA0019.jpg" class="slide">
-<img src="images/IMG-20250813-WA0020.jpg" class="slide">
-<img src="images/IMG-20250813-WA0021.jpg" class="slide">
-<img src="images/IMG-20250813-WA0022.jpg" class="slide">
-<img src="images/IMG-20250813-WA0023.jpg" class="slide">
-<img src="images/IMG-20250813-WA0024.jpg" class="slide">
-<img src="images/IMG-20250813-WA0025.jpg" class="slide">
-<img src="images/IMG-20250813-WA0026.jpg" class="slide">
+<img src="images/android-3.jpg" class="slide">
 </div>
 <button class="prev">&#10094;</button>
 <button class="next">&#10095;</button>
 <div class="dots"></div>
 </div>
+
 <div class="card-content">
 <h3>Booking Lapangan Futsal (Android)</h3>
 <p>Aplikasi Android dengan sistem booking dan pembayaran.</p>
 </div>
 </div>
 
+<!-- WEBSITE -->
 <div class="card">
-<div class="slider">
+<div class="slider-web slider">
 <div class="slides">
 <img src="images/website-1.png" class="slide">
 <img src="images/web2.jpg" class="slide">
@@ -246,34 +182,15 @@ Mengembangkan aplikasi Android dan backend Laravel lengkap dengan sistem pembaya
 <button class="next">&#10095;</button>
 <div class="dots"></div>
 </div>
+
 <div class="card-content">
 <h3>Website Laravel Booking Futsal</h3>
-<p>Dashboard admin dan backend untuk manajemen booking.</p>
+<p>Dashboard admin dan backend manajemen booking.</p>
 </div>
 </div>
 
 </div>
 </section>
-
-<section>
-<h2>Pendidikan</h2>
-<div class="education">
-<p><strong>S1 Teknik Informatika</strong><br>
-Universitas XXXX (2021 - 2025)</p>
-</div>
-</section>
-
-<section id="contact">
-<h2>Kontak</h2>
-<p style="text-align:center;">
-Email: emailkamu@gmail.com <br>
-GitHub: github.com/usernamekamu
-</p>
-</section>
-
-<footer>
-<p>© 2026 Rafi. All Rights Reserved.</p>
-</footer>
 
 <script>
 document.querySelectorAll(".slider").forEach(slider=>{
