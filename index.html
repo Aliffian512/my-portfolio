@@ -8,8 +8,17 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
-body{background:#0f172a;color:white;}
-
+body::before{
+content:"";
+position:fixed;
+top:-200px;
+left:-200px;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#38bdf8,transparent);
+opacity:0.2;
+filter:blur(120px);
+z-index:-1;
 /* NAVBAR */
 nav{
 position:fixed;width:100%;background:#0f172a;
