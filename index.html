@@ -4,73 +4,165 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio Rafi</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+/* BODY */
 body{
-background: linear-gradient(120deg,#0f172a,#1e3a8a,#0f172a);
-color:white;
+background: linear-gradient(135deg,#ffffff,#f1f5f9,#e0f2fe);
+color:#0f172a;
 padding-top:70px;
 }
+
 /* NAVBAR */
 nav{
-position:fixed;width:100%;background:#0f172a;
-padding:15px 10%;display:flex;justify-content:space-between;align-items:center;z-index:1000;
+position:fixed;
+width:100%;
+background:rgba(255,255,255,0.9);
+backdrop-filter: blur(10px);
+border-bottom:1px solid #e2e8f0;
+padding:15px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
 }
-nav a{color:white;text-decoration:none;margin-left:20px;}
-nav a:hover{color:#38bdf8;}
+
+nav a{
+color:#0f172a;
+text-decoration:none;
+margin-left:20px;
+font-weight:500;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
 
 /* HEADER */
 header{
-height:100vh;display:flex;flex-direction:column;
-justify-content:center;align-items:center;text-align:center;padding:0 10%;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 10%;
 }
-header h1{font-size:50px;}
-header span{color:#38bdf8;}
-header p{margin-top:15px;color:#94a3b8;}
+
+header h1{
+font-size:50px;
+}
+
+header p{
+margin-top:15px;
+color:#475569;
+}
+
+/* BUTTON */
 
 .btn{
-margin-top:20px;padding:12px 25px;background:#38bdf8;color:black;
-text-decoration:none;border-radius:5px;font-weight:bold;display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#38bdf8;
+color:black;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
+display:inline-block;
 }
-.btn:hover{background:#0ea5e9;}
 
-section{padding:100px 10%;}
-h2{text-align:center;margin-bottom:50px;font-size:35px;}
+.btn:hover{
+background:#0ea5e9;
+}
+
+/* SECTIONS */
+
+section{
+padding:100px 10%;
+}
+
+h2{
+text-align:center;
+margin-bottom:50px;
+font-size:35px;
+}
 
 /* ABOUT */
-.about p{max-width:700px;margin:auto;text-align:center;color:#cbd5f5;}
+
+.about p{
+max-width:700px;
+margin:auto;
+text-align:center;
+color:#475569;
+}
 
 /* SKILLS */
+
 .skills{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
 gap:25px;
 }
+
 .skill-card{
-background:#1e293b;padding:25px;border-radius:15px;text-align:center;
+background:white;
+padding:25px;
+border-radius:15px;
+text-align:center;
+border:1px solid #e2e8f0;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
-.skill-card img{width:50px;margin-bottom:10px;}
+
+.skill-card img{
+width:50px;
+margin-bottom:10px;
+}
 
 /* EXPERIENCE & EDUCATION */
+
 .box{
-background:#1e293b;padding:30px;border-radius:15px;
-max-width:800px;margin:auto;text-align:center;
+background:white;
+padding:30px;
+border-radius:15px;
+max-width:800px;
+margin:auto;
+text-align:center;
+border:1px solid #e2e8f0;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 /* PROJECTS */
+
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
 gap:40px;
 }
+
 .card{
-background:#1e293b;border-radius:20px;
-padding:30px 20px;display:flex;flex-direction:column;align-items:center;
+background:white;
+border-radius:20px;
+padding:30px 20px;
+display:flex;
+flex-direction:column;
+align-items:center;
+border:1px solid #e2e8f0;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 /* ANDROID SLIDER */
+
 .slider-android{
 position:relative;
 max-width:280px;
@@ -80,59 +172,118 @@ margin-top:40px;
 overflow:hidden;
 border-radius:30px;
 background:white;
-box-shadow:0 20px 40px rgba(0,0,0,0.3);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
+
 .slider-android .slides{
-display:flex;height:100%;transition:transform .6s ease;
+display:flex;
+height:100%;
+transition:transform .6s ease;
 }
+
 .slider-android .slide{
 flex:0 0 100%;
-width:100%;height:100%;
-object-fit:contain;background:white;
+width:100%;
+height:100%;
+object-fit:contain;
+background:white;
 }
 
 /* WEBSITE SLIDER */
+
 .slider-web{
 position:relative;
 width:100%;
 aspect-ratio:16/9;
 overflow:hidden;
 border-radius:20px;
-background:#0f172a;
-box-shadow:0 15px 35px rgba(0,0,0,0.3);
+background:#f8fafc;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
+
 .slider-web .slides{
-display:flex;height:100%;transition:transform .6s ease;
+display:flex;
+height:100%;
+transition:transform .6s ease;
 }
+
 .slider-web .slide{
 flex:0 0 100%;
-width:100%;height:100%;
-object-fit:contain;background:#0f172a;
+width:100%;
+height:100%;
+object-fit:contain;
 }
 
-/* SLIDER CONTROLS */
+/* SLIDER BUTTON */
+
 .prev,.next{
-position:absolute;top:50%;transform:translateY(-50%);
-background:rgba(0,0,0,0.5);color:white;
-border:none;padding:10px 15px;border-radius:5px;cursor:pointer;
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.5);
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:5px;
+cursor:pointer;
 }
-.prev{left:10px;} .next{right:10px;}
 
-.dots{position:absolute;bottom:15px;width:100%;text-align:center;}
+.prev{left:10px;}
+.next{right:10px;}
+
+/* DOTS */
+
+.dots{
+position:absolute;
+bottom:15px;
+width:100%;
+text-align:center;
+}
+
 .dot{
-width:10px;height:10px;margin:0 4px;
-background:rgba(255,255,255,.4);border-radius:50%;display:inline-block;cursor:pointer;
+width:10px;
+height:10px;
+margin:0 4px;
+background:rgba(0,0,0,.3);
+border-radius:50%;
+display:inline-block;
+cursor:pointer;
 }
-.active-dot{background:#38bdf8;}
 
-.card-content{margin-top:25px;text-align:center;}
+.active-dot{
+background:#38bdf8;
+}
 
-footer{text-align:center;padding:20px;background:#1e293b;}
+/* CARD CONTENT */
+
+.card-content{
+margin-top:25px;
+text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#f1f5f9;
+color:#475569;
+}
+
+/* MOBILE */
 
 @media(max-width:768px){
-header h1{font-size:36px;}
-.slider-android{max-width:220px;}
+
+header h1{
+font-size:36px;
 }
+
+.slider-android{
+max-width:220px;
+}
+
+}
+
 </style>
 </head>
 
@@ -140,6 +291,7 @@ header h1{font-size:36px;}
 
 <nav>
 <strong>Rafi</strong>
+
 <div>
 <a href="#home">Home</a>
 <a href="#about">Tentang Saya</a>
@@ -149,179 +301,270 @@ header h1{font-size:36px;}
 <a href="#pendidikan">Pendidikan</a>
 <a href="#contact">Contact</a>
 </div>
+
 </nav>
 
-<section id="home" class="home">
+
+<section id="home">
+
 <header>
+
 <h1>Rafi Aliffian Fardana</h1>
+
 <p>Web & Mobile Developer | Data Entry Specialist</p>
+
 <a href="#projects" class="btn">Lihat Project</a>
+
 </header>
+
 </section>
+
 
 <section id="about" class="about">
+
 <h2>Tentang Saya</h2>
-<p>Saya adalah fresh graduate D3 Sistem Informasi dengan fokus pada 
-  pengembangan aplikasi web dan mobile serta pengelolaan data. Memiliki pengalaman 
-  membangun aplikasi Android dan website berbasis Laravel, termasuk sistem booking dan manajemen data. 
-  Terbiasa mengelola, mengolah, dan merekap data menggunakan Microsoft Excel dan Google 
-  Sheets secara teliti dan terstruktur. Memiliki kemampuan problem solving yang baik, detail-oriented, 
-  serta mampu bekerja dengan target dan deadline.
+
+<p>
+
+Saya adalah fresh graduate D3 Sistem Informasi dengan fokus pada 
+pengembangan aplikasi web dan mobile serta pengelolaan data. Memiliki pengalaman 
+membangun aplikasi Android dan website berbasis Laravel, termasuk sistem booking dan manajemen data. 
+Terbiasa mengelola, mengolah, dan merekap data menggunakan Microsoft Excel dan Google 
+Sheets secara teliti dan terstruktur.
+
 </p>
+
 </section>
+
 
 <section id="skills">
+
 <h2>Skill</h2>
+
 <div class="skills">
-<div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"><p>Java</p></div>
-<div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"><p>Laravel</p></div>
-<div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><p>HTML</p></div>
-<div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"><p>CSS</p></div>
-<div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"><p>MySQL</p></div>
-<div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"><p>GitHub</p></div>
-<div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"><p>PHP</p></div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+<p>Java</p>
 </div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg">
+<p>Laravel</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+<p>HTML</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+<p>CSS</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+<p>MySQL</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+<p>GitHub</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+<p>PHP</p>
+</div>
+
+</div>
+
 </section>
+
 
 <section id="pengalaman">
+
 <h2>Pengalaman Kerja</h2>
+
 <div class="box">
+
 <strong>PT Harian Bangsa (Sept 2024 - Feb 2025) - Magang</strong>
+
 <p>Membantu penginputan dan pengarsipan data perusahaan</p>
+
+</div>
+
 </section>
+
 
 <section id="projects">
+
 <h2>Project</h2>
+
 <div class="projects">
 
+<!-- ANDROID -->
+
 <div class="card">
+
 <div class="slider-android slider">
+
 <div class="slides">
+
 <img src="images/android-1.jpg" class="slide">
-<img src="images/IMG-20250813-WA0005.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0006.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0007.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0008.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0009.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0010.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0011.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0012.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0013.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0014.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0015.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0016.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0017.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0018.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0019.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0020.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0021.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0022.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0023.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0024.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0025.jpg" class="slide"> 
-<img src="images/IMG-20250813-WA0026.jpg" class="slide">
 
 </div>
+
 <button class="prev">&#10094;</button>
 <button class="next">&#10095;</button>
+
 <div class="dots"></div>
+
 </div>
+
 <div class="card-content">
+
 <h3>Booking Lapangan Futsal (Android)</h3>
-<p>Membuat Aplikasi Android dengan sistem booking dan pembayaran untuk tugas Proyek Akhir</p>
+
+<p>Membuat aplikasi Android dengan sistem booking dan pembayaran untuk tugas Proyek Akhir</p>
+
 </div>
+
 </div>
+
+
+<!-- WEBSITE -->
 
 <div class="card">
+
 <div class="slider-web slider">
+
 <div class="slides">
+
 <img src="images/web (1).png" class="slide">
-<img src="images/web (2).png" class="slide">
-<img src="images/web (3).png" class="slide"> 
-<img src="images/web (4).png" class="slide"> 
-<img src="images/web (5).png" class="slide"> 
-<img src="images/web (6).png" class="slide"> 
-<img src="images/web (7).png" class="slide"> 
-<img src="images/web (8).png" class="slide"> 
-<img src="images/web (9).png" class="slide"> 
-<img src="images/web (10).png" class="slide"> 
-<img src="images/web (11).png" class="slide"> 
-<img src="images/web (12).png" class="slide"> 
-<img src="images/web (13).png" class="slide"> 
-<img src="images/web (14).png" class="slide"> 
-<img src="images/web (15).png" class="slide"> 
-<img src="images/web (16).png" class="slide"> 
-<img src="images/web (17).png" class="slide"> 
-<img src="images/web (18).png" class="slide"> 
-<img src="images/web (19).png" class="slide"> 
-<img src="images/web (20).png" class="slide"> 
-<img src="images/web (21).png" class="slide">
+
 </div>
+
 <button class="prev">&#10094;</button>
 <button class="next">&#10095;</button>
+
 <div class="dots"></div>
+
 </div>
+
 <div class="card-content">
+
 <h3>Website Admin Booking Futsal</h3>
-<p>Membuat Dashboard admin dan backend manajemen booking untuk tugas Proyek Akhir</p>
-</div>
+
+<p>Membuat dashboard admin dan backend manajemen booking untuk tugas Proyek Akhir</p>
+
 </div>
 
 </div>
+
+</div>
+
 </section>
+
 
 <section id="pendidikan">
+
 <h2>Pendidikan</h2>
+
 <div class="box">
+
 <strong>D3 Sistem Informasi</strong>
+
 <p>Universitas Dinamika Surabaya (2022–2025)</p>
+
 </div>
+
 <br>
+
 <div class="box">
+
 <strong>SMA Barunawati Surabaya</strong>
+
 <p>(2019–2022)</p>
+
 </div>
+
 </section>
+
 
 <section id="contact">
+
 <h2>Kontak</h2>
-<p style="text-align:justify;">
-Email: rafialiffianfardana@gmail.com<br>
-Instagram: raffalffn<br>
-GitHub: github.com/Aliffian512
+
+<p style="text-align:center">
+
+Email : rafialiffianfardana@gmail.com <br>
+Instagram : raffalffn <br>
+GitHub : github.com/Aliffian512
+
 </p>
+
 </section>
 
+
 <footer>
+
 <p>© 2026 Rafi Aliffian Fardana</p>
+
 </footer>
 
+
 <script>
+
 document.querySelectorAll(".slider").forEach(slider=>{
+
 const slides=slider.querySelector(".slides");
 const imgs=slider.querySelectorAll(".slide");
 const prev=slider.querySelector(".prev");
 const next=slider.querySelector(".next");
 const dotsWrap=slider.querySelector(".dots");
+
 let i=0;
 
 imgs.forEach((_,idx)=>{
+
 const d=document.createElement("span");
+
 d.className="dot"+(idx===0?" active-dot":"");
+
 d.onclick=()=>{i=idx;update();}
+
 dotsWrap.appendChild(d);
+
 });
+
 const dots=dotsWrap.querySelectorAll(".dot");
 
 function update(){
+
 slides.style.transform=`translateX(-${i*100}%)`;
+
 dots.forEach(d=>d.classList.remove("active-dot"));
+
 dots[i].classList.add("active-dot");
+
 }
+
 prev.onclick=()=>{i=(i-1+imgs.length)%imgs.length;update();}
+
 next.onclick=()=>{i=(i+1)%imgs.length;update();}
-setInterval(()=>{i=(i+1)%imgs.length;update();},4000);
+
+setInterval(()=>{
+
+i=(i+1)%imgs.length;
+
+update();
+
+},4000);
+
 });
+
 </script>
 
 </body>
