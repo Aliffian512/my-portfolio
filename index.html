@@ -580,6 +580,7 @@ Sheets secara teliti dan terstruktur.
 <p style="text-align:center">
 
 Email : rafialiffianfardana@gmail.com <br>
+No Telp : 0881027377327 <br>
 Instagram : raffalffn <br>
 GitHub : github.com/Aliffian512
 
@@ -601,10 +602,17 @@ const toggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("nav-links");
 
 toggle.onclick = () => {
-
 nav.classList.toggle("active");
-
 }
+
+// MENU AUTO CLOSE
+const links = document.querySelectorAll(".nav-links a");
+
+links.forEach(link => {
+link.addEventListener("click", () => {
+nav.classList.remove("active");
+});
+});
 
 document.querySelectorAll(".slider").forEach(slider=>{
 
